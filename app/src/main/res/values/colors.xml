@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="uas_blue">#1B365D</color>            <!-- Azul marino de los botones principales -->
+    <color name="uas_blue_dark">#12243E</color>       <!-- Azul más oscuro al presionar -->
+    <color name="uas_gold">#C59B27</color>            <!-- Dorado/Amarillo para subtítulos -->
+    <color name="card_background">#EBF2F7</color>     <!-- Blanco azulado translúcido para la tarjeta -->
+    <color name="text_primary">#1E293B</color>        <!-- Gris oscuro para títulos principales -->
+    <color name="text_secondary">#64748B</color>      <!-- Gris medio para etiquetas y descripciones -->
+    <color name="input_background">#FFFFFF</color>     <!-- Blanco puro para los campos de texto -->
+    <color name="input_border">#CBD5E1</color>         <!-- Gris claro para el borde de los inputs -->
+</resources>
