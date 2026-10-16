@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -42,6 +43,13 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             realizarLogin()
         }
+
+        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+        tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun realizarLogin() {

@@ -57,4 +57,6 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     // Corrutinas para llamadas asíncronas
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    //Mongo
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

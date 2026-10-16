@@ -1,104 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
+    android:fillViewport="true"
     android:background="#F8FAFC">
 
-    <!-- Tarjeta Contenedora Principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bg_card"
-        android:padding="24dp"
-        android:elevation="4dp">
+        android:gravity="center_horizontal"
+        android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bienvenido al Sistema de Tutorías UAS"
-            android:textColor="@color/text_primary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp" />
-
-        <!-- Tarjeta Gris Interior con Datos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#F4F4F4"
-            android:padding="16dp"
-            android:layout_marginBottom="20dp">
+            android:background="@drawable/bg_card"
+            android:padding="24dp"
+            android:elevation="4dp">
 
-            <ProgressBar
-                android:id="@+id/pbLoading"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="visible" />
+                android:text="Mi Perfil Institucional"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
 
             <LinearLayout
-                android:id="@+id/llUserData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:background="#F4F4F4"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
 
-                <TextView
-                    android:id="@+id/tvUsuario"
+                <ProgressBar
+                    android:id="@+id/pbLoading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Usuario: Cargando..."
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_gravity="center"
+                    android:visibility="visible" />
 
-                <TextView
-                    android:id="@+id/tvCorreo"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/llUserData"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Correo: Cargando..."
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/tvCarrera"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Carrera: Cargando..."
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
+                    <!-- SECCIÓN DEL AVATAR -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
 
-                <TextView
-                    android:id="@+id/tvRol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rol: Cargando..."
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp" />
+                        <ImageView
+                            android:id="@+id/ivAvatar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="#E2E8F0"
+                            android:scaleType="centerCrop"
+                            android:layout_marginEnd="16dp" />
+
+                        <Button
+                            android:id="@+id/btnCambiarFoto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cambiar Foto"
+                            android:textSize="12sp"
+                            android:backgroundTint="@color/uas_gold" />
+                    </LinearLayout>
+
+                    <TextView android:id="@+id/tvUsuario" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/tvCorreo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/tvCarrera" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/tvRol" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textStyle="bold" android:textSize="14sp" />
+
+                    <!-- SECCIÓN DE CONTRASEÑA -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#D1D5DB" android:layout_marginVertical="16dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambiar Contraseña" android:textStyle="bold" android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/etCurrentPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_input"
+                        android:hint="Contraseña actual"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etNewPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_input"
+                        android:hint="Nueva contraseña"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_input"
+                        android:hint="Confirmar nueva"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <Button
+                        android:id="@+id/btnActualizarPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Actualizar Seguridad"
+                        android:backgroundTint="@color/uas_blue" />
+
+                </LinearLayout>
             </LinearLayout>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#C9302C"
+                android:text="Cerrar Sesión"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
         </LinearLayout>
-
-        <!-- Botón Cerrar Sesión (Rojo Institucional) -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="#C9302C"
-            android:paddingHorizontal="16dp"
-            android:text="Cerrar Sesión"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

@@ -6,5 +6,6 @@ data class User (
     val apellido: String,
     val correo_institucional: String,
     val carrera: String,
-    val rol: String
+    val rol: String,
+    val imagen_perfil: String?
 )
